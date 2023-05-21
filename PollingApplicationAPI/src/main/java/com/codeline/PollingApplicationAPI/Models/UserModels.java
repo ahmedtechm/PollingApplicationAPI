@@ -1,4 +1,4 @@
 package com.codeline.PollingApplicationAPI.Models;
 
-public class UsersModels {
+public class UserModels {
 }
