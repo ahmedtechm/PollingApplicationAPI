@@ -14,7 +14,7 @@ public class UserModels {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      Long id;
-
+    @Column(name = "user_name")
      String username;
      String password;
 }
