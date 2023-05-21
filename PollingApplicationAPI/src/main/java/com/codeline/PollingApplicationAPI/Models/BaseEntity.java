@@ -1,5 +1,4 @@
 package com.codeline.PollingApplicationAPI.Models;
 
-public class UserModels {
-
+public class BaseEntity {
 }
