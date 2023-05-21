@@ -7,6 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class PollService {
 
-
+    @Autowired
     PollRepository pollRepository;
 }
