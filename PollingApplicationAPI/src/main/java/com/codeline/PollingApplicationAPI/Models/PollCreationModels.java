@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Setter
 @Data
 @Entity
-public class PollModels {
+public class PollCreationModels {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
