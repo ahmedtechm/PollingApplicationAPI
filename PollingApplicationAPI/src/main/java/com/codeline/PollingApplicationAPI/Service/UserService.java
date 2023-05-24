@@ -21,8 +21,8 @@ public class UserService {
         return userRepository.findAll();
     }
     public GetUserResponse getUserResponseById(Long usersId) {
-        Optional<Users> optionalEmployee = UserRepository.findById(usersId);
-        if (!optionalEmployee.isEmpty()) {
+        Optional<Users> optionalUsers = userRepository.findById(usersId);
+        if (!optionalUsers.isEmpty()) {
             Users users = optionalUsers.get();
             GetUserResponse userResponse = new GetUserResponse(users.getUsername(), users.getPassword());
             return userResponse;
