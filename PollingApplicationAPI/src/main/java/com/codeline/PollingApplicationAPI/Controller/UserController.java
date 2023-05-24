@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -17,6 +18,11 @@ public class UserController {
     @RequestMapping("users/create")
     public void saveUser () {
         createUser();
+    }
+
+    @RequestMapping("users/get")
+    public List<Users> getUsers (){
+        return UserService.getUsers();
     }
         public void createUser() {
         Users users = new Users();

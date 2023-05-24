@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class UserService {
     @Autowired
+    static
     UserRepository userRepository;
 
     public void saveUser(Users users){
