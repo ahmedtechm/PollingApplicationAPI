@@ -1,10 +1,12 @@
 package com.codeline.PollingApplicationAPI.Controller;
 
-import com.codeline.PollingApplicationAPI.Models.User;
+import com.codeline.PollingApplicationAPI.Models.Users;
 import com.codeline.PollingApplicationAPI.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Date;
 
 @RestController
 public class UserController {
@@ -12,15 +14,18 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping("user/create")
+    @RequestMapping("users/create")
     public void saveUser () {
         createUser();
     }
         public void createUser() {
-        User user = new User();
-        user.setUsername("ahmed");
-        user.setPassword("12221");
-        userService.saveUser(user);
+        Users users = new Users();
+        users.setUsername("ahmed");
+        users.setPassword("12221");
+        users.setCreatedDate(new Date());
+        users.setIsActive(true);
+        userService.saveUser(users);
+
 
     }
 }
