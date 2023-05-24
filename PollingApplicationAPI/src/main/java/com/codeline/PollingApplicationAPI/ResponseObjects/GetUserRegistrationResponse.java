@@ -1,4 +1,4 @@
 package com.codeline.PollingApplicationAPI.ResponseObjects;
 
-public class GetUserResponse {
+public class GetUserRegistrationResponse {
 }
