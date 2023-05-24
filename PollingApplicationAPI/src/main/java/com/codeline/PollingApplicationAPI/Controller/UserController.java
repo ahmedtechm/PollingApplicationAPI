@@ -1,8 +1,10 @@
 package com.codeline.PollingApplicationAPI.Controller;
 
 import com.codeline.PollingApplicationAPI.Models.Users;
+import com.codeline.PollingApplicationAPI.RequestObjects.GetUserRequest;
 import com.codeline.PollingApplicationAPI.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,18 +18,18 @@ public class UserController {
     UserService userService;
 
     @RequestMapping("users/create")
-    public void saveUser () {
-        createUser();
+    public void saveUser (@RequestBody GetUserRequest getUserRequest) {
+        createUser(getUserRequest);
     }
 
     @RequestMapping("users/get")
     public List<Users> getUsers (){
-        return UserService.getUsers();
+        return userService.getUsers();
     }
-        public void createUser() {
+        public void createUser(GetUserRequest getUserRequest) {
         Users users = new Users();
-        users.setUsername("ahmed");
-        users.setPassword("12221");
+        users.setUsername(getUserRequest.getUserName());
+        users.setPassword(getUserRequest.getPassport());
         users.setCreatedDate(new Date());
         users.setIsActive(true);
         userService.saveUser(users);
