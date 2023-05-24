@@ -34,6 +34,12 @@ public class UserController {
     public GetUserResponse createUsers(@PathVariable Long userId) {
         return userService.getUserResponseById(userId);
     }
+
+    //Delete Employee
+    @RequestMapping("users/delete/{Id}")
+    public void deleteUsers (@PathVariable Long Id) {
+        userService.deleteUserById(Id);
+    }
         public void createUser(GetUserRequest getUserRequest) {
         Users users = new Users();
         users.setUsername(getUserRequest.getUsername());

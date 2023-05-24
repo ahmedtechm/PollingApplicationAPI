@@ -29,5 +29,8 @@ public class UserService {
         }
         return null;
     }
-
+    //Delete Users
+    public void deleteUserById(Long userId) {
+        userRepository.deleteById(userId);
+    }
 }
