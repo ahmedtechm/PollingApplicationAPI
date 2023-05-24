@@ -10,7 +10,6 @@ import java.util.List;
 @Service
 public class UserService {
     @Autowired
-    static
     UserRepository userRepository;
 
     public void saveUser(Users users){
@@ -19,4 +18,5 @@ public class UserService {
     public List<Users> getUsers() {
         return userRepository.findAll();
     }
+
 }

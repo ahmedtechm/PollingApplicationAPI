@@ -28,8 +28,8 @@ public class UserController {
     }
         public void createUser(GetUserRequest getUserRequest) {
         Users users = new Users();
-        users.setUsername(getUserRequest.getUserName());
-        users.setPassword(getUserRequest.getPassport());
+        users.setUsername(getUserRequest.getUsername());
+        users.setPassword(getUserRequest.getPassword());
         users.setCreatedDate(new Date());
         users.setIsActive(true);
         userService.saveUser(users);
