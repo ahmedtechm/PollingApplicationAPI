@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Setter
 @Data
 @Entity
-public class Poll {
+public class Poll  extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
