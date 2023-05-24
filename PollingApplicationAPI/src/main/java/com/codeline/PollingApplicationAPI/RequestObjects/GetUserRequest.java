@@ -1,4 +1,4 @@
 package com.codeline.PollingApplicationAPI.RequestObjects;
 
-public class GetPollCreationRequest {
+public class GetUserRequest {
 }

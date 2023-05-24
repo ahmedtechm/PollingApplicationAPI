@@ -1,12 +1,11 @@
 package com.codeline.PollingApplicationAPI.Service;
 
-import com.codeline.PollingApplicationAPI.Repository.PollCreationRepository;
+import com.codeline.PollingApplicationAPI.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PollCreationService {
-
+public class UserService {
     @Autowired
-    PollCreationRepository pollCreationRepository;
+    UserRepository userRepository;
 }

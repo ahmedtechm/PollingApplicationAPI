@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Data
 @Setter
 @Getter
-public class UserRegistrationModels {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      Long id;
