@@ -21,7 +21,7 @@ public class PollController {
     public void createPoll() {
 
         Poll poll = new Poll();
-        poll.setQuestion("");
+        poll.setQuestion("What is your favorite color?");
         poll.setCreatedDate(new Date());
         poll.setIsActive(true);
         pollService.savePoll(poll);
