@@ -34,8 +34,13 @@ public class PollController {
     public GetPollResponse createPoll (@PathVariable Long pollId){
         return pollService.getPollResponseById(pollId);
     }
-
-
+    //====================================================================
+    //Delete Poll
+    @RequestMapping("poll/delete/{Id}")
+    public void deletePoll (@PathVariable Long Id) {
+        pollService.deletePollById(Id);
+    }
+    //====================================================================
     public void createPoll(GetPollRequest getPollRequest) {
 
         Poll poll = new Poll();
