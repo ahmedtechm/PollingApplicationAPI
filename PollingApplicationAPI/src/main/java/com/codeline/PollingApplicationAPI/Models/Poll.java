@@ -20,7 +20,7 @@ public class Poll  extends BaseEntity {
     Long id;
 
     String question;
-
+    @ElementCollection
     List<String> choices = new ArrayList<>();
 
 }
