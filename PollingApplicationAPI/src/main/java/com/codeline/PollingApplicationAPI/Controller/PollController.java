@@ -24,6 +24,8 @@ public class PollController {
     public List<Poll> getPoll () {
         return pollService.getPll();
     }
+    //====================================================================
+
 
 
     public void createPoll() {
