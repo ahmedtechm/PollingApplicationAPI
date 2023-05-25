@@ -7,16 +7,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 public class PollController {
     @Autowired
     PollService pollService;
+    //===================================================================
 
     @RequestMapping("poll/create")
     public void savePoll () {
         createPoll();
     }
+    //====================================================================
+    @RequestMapping("poll/get")
+    public List<Poll> getPoll () {
+        return pollService.getPll();
+    }
+
 
     public void createPoll() {
 
