@@ -27,7 +27,7 @@ public class PollService {
         Optional<Poll> optionalPoll = pollRepository.findById(pollId);
         if (!optionalPoll.isEmpty()) {
             Poll poll = optionalPoll.get();
-            GetPollResponse pollResponse = new GetPollResponse(poll.getQuestion());
+            GetPollResponse pollResponse = new GetPollResponse(poll.getQuestion(), poll.getChoices());
             return pollResponse;
         }
         return null;

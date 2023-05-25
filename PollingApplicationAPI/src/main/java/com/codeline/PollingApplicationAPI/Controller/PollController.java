@@ -45,6 +45,7 @@ public class PollController {
 
         Poll poll = new Poll();
         poll.setQuestion(getPollRequest.getQuestion());
+        poll.setChoices(getPollRequest.getChoices());
         poll.setCreatedDate(new Date());
         poll.setIsActive(true);
         pollService.savePoll(poll);
