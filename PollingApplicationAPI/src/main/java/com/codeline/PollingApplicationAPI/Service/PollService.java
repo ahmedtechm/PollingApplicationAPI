@@ -33,5 +33,9 @@ public class PollService {
         return null;
     }
     //===========================================================================
+    //Delete Poll
+    public void deletePollById(Long pollId) {
+        pollRepository.deleteById(pollId);
+    }
 }
 
