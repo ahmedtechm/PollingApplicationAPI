@@ -1,8 +1,10 @@
 package com.codeline.PollingApplicationAPI.Controller;
 
 import com.codeline.PollingApplicationAPI.Models.Poll;
+import com.codeline.PollingApplicationAPI.RequestObjects.GetPollRequest;
 import com.codeline.PollingApplicationAPI.Service.PollService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +18,8 @@ public class PollController {
     //===================================================================
 
     @RequestMapping("poll/create")
-    public void savePoll () {
-        createPoll();
+    public void savePoll (@RequestBody GetPollRequest getPollRequest) {
+        createPoll(getPollRequest);
     }
     //====================================================================
     @RequestMapping("poll/get")
@@ -28,10 +30,10 @@ public class PollController {
 
 
 
-    public void createPoll() {
+    public void createPoll(GetPollRequest getPollRequest) {
 
         Poll poll = new Poll();
-        poll.setQuestion("What is your favorite color?");
+        poll.setQuestion(getPollRequest.getQuestion());
         poll.setCreatedDate(new Date());
         poll.setIsActive(true);
         pollService.savePoll(poll);
